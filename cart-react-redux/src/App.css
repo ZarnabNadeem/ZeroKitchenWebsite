@@ -26,6 +26,7 @@
   
   .smalltrash{
       display: none;
+     
   }
   
   
@@ -74,9 +75,11 @@
   @media (max-width:450px){
       .smalltrash{
           display: block;
+          
       }
       .largetrash{
           display:none;
+          
       }
       .emptycart_img{
           margin-right: 50px;

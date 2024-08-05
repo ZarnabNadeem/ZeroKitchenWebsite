@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Cardsdata from "./CardsData";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { DEL } from "../redux/actions/action";
+import { ADD, REMOVE} from "../redux/actions/action";
+
 function CardsDetails() {
   const [data, setData] = useState([]);
   // console.log(data);
 
   const { id } = useParams();
   // console.log(id)
+
+  const history = useNavigate()
+
+  const dispatch = useDispatch()
 
   const getData = useSelector((state) => state.cartreducer.carts);
   // console.log(getData);
@@ -19,6 +26,29 @@ function CardsDetails() {
     });
     setData(comparedata);
   };
+
+  //add data
+  const send = (e) => {
+    dispatch(ADD(e))
+}
+
+// delete by clicking in trash icon
+const dlt = (id)=>{
+  dispatch(DEL(id))
+  history("/");
+}
+
+const remove = (item)=>{
+  if(item.qnty === 1){
+  dispatch(DEL(item.id));
+  history("/");
+}
+  else{
+    dispatch(REMOVE(item));
+  }
+  
+}
+
   useEffect(() => {
     compare();
   }, [id]);
@@ -57,8 +87,13 @@ function CardsDetails() {
                           </p>
                           <p>
                             {" "}
-                            <strong>Total</strong> : Rs 300/-
+                            <strong>Total</strong> : Rs {ele.price *ele.qnty}/-
                           </p>
+                          <div className="mt-5 d-flex justify-content-between align-item-center" style={{width:100, cursor:'pointer',background:'#ddd', color:"#111"}}>
+                            <span style={{fontSize:24}} onClick={()=>remove(ele)}>-</span>
+                            <span style={{fontSize:22}}>{ele.qnty}</span>
+                            <span style={{fontSize:24}} onClick={()=>send(ele)} >+</span>
+                          </div>
                         </td>
                         <td>
                           <p>
@@ -74,6 +109,7 @@ function CardsDetails() {
                               {" "}
                               <i
                                 className="fas fa-trash"
+                                onClick={()=>dlt(ele.id)}
                                 style={{
                                   color: "crimson",
                                   fontSize: 20,

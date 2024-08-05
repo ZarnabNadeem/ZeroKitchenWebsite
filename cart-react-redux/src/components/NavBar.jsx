@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -10,10 +10,12 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Cardsdata from "./CardsData";
 import { DEL } from "../redux/actions/action";
-import './styles.css'
-
+import "./styles.css";
 
 function NavBar() {
+  const[price, setPrice] = useState(0);
+  // console.log(price);
+  
   const getData = useSelector((state) => state.cartreducer.carts);
   console.log(getData);
 
@@ -31,13 +33,27 @@ function NavBar() {
   const dlt = (id) => {
     dispatch(DEL(id));
   };
+
+
+  const total =()=>{
+    let price = 0;
+    getData.map((ele,k)=>{
+      price = ele.price *ele.qnty + price;
+    });
+    setPrice(price);
+
+  }
+  useEffect(()=>{
+    total();
+  }, [total])
   return (
     <>
       <Navbar
         className="sticky-top "
-        bg="dark"
+        bg="dark" 
         data-bs-theme="dark"
         style={{ height: "60px" }}
+        
       >
         <Container>
           <NavLink to={"/"} className={"text-decoration-none text-light mx-3"}>
@@ -46,21 +62,33 @@ function NavBar() {
           </NavLink>
           <Nav className="me-auto">
             <NavLink
-              to={"/"}
+              to="#"
               className={"text-decoration-none text-light mx-3"}
+              onClick={() => {
+                const section = document.getElementById("Home");
+                section.scrollIntoView({ behavior: "smooth" });
+              }}
             >
-              {" "}
+              {/* {" "} */}
               Home
             </NavLink>
             <NavLink
-              to={"/"}
+              to="#"
               className={"text-decoration-none text-light mx-3"}
+              onClick={() => {
+                const section = document.getElementById("OurMenu");
+                section.scrollIntoView({ behavior: "smooth" });
+              }}
             >
-              {" "}
+              {/* {" "} */}
               Our Menu
             </NavLink>
-            <NavLink to={"/"} className={"text-decoration-none text-light"}>
-              {" "}
+            <NavLink to="#" className={"text-decoration-none text-light"}
+            onClick={() => {
+              const section = document.getElementById("Specials");
+              section.scrollIntoView({ behavior: "smooth" });
+            }}>
+              {/* {" "} */}
               Our Specials
             </NavLink>
           </Nav>
@@ -81,6 +109,7 @@ function NavBar() {
         </Container>
         <Menu
           id="basic-menu"
+          
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
@@ -118,17 +147,34 @@ function NavBar() {
                             <p> {e.rname}</p>
                             <p> Price: Rs{e.price}/-</p>
                             <p> Quantity: {e.qnty}</p>
-                            <p><i className="fas fa-trash smalltrash" style={{ color: 'maroon', fontSize: 20, cursor: 'pointer' }}></i></p>
-                                                            </td>
-                                                            <td className="mt-5" style={{ color: 'maroon', fontSize: 20, cursor: 'pointer' }}>
-                                                                <p><i className="fas fa-trash largetrash"></i></p>
-
-                                                            </td>
+                            <p style={{
+                                  color: "maroon",
+                                  fontSize: 20,
+                                  cursor: "pointer",
+                                }} onClick={()=>dlt(e.id)}>
+                              <i
+                                className="fas fa-trash smalltrash"
+                                
+                              ></i>
+                            </p>
+                          </td>
+                          <td
+                            className="mt-5"
+                            style={{
+                              color: "maroon",
+                              fontSize: 20,
+                              cursor: "pointer",
+                            }} onClick={()=>dlt(e.id)}
+                          >
+                            <p >
+                              <i className="fas fa-trash largetrash"></i>
+                            </p>
+                          </td>
                         </tr>
                       </>
                     );
                   })}
-                  <p className="text-center">Total: Rs300/- </p>
+                  <p className="text-center">Total: Rs {price}/- </p>
                 </tbody>
               </Table>
             </div>

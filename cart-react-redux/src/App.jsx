@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router-dom"
 import { Style } from '@mui/icons-material';
 
 
+
 function App() {
   return (
 
@@ -21,6 +22,9 @@ function App() {
       <Routes>
         <Route path='/' element={<>  <Hero /> <Cards /> <Specials /> <Footer /> </>} />
         <Route path='/cart/:id' element={< CardsDetails />} />
+       
+        
+        
       </Routes>
 
     </>

@@ -15,8 +15,9 @@ const Cards = () => {
 
 
     return (
+        <section id='OurMenu'>
         <div className='bg'>
-            <div className='container pt-5' id='Menu' >
+            <div className='container pt-5'  >
                 <h2 className='text-center' style={{ fontFamily: 'monospace', fontWeight: ' bold', fontSize: '6vh' }} >Our Menu</h2>
                 <div className='row d-flex justify-content-center align-items-center'>
                     {
@@ -24,7 +25,7 @@ const Cards = () => {
                             return (
                                 <>
                                     <Card style={{ width: '22rem', border: 'none' }} className='mx-2 mt-4 card_style' >
-                                        <Card.Img variant="top" src={element.imgdata} style={{ height: '16rem', marginTop: "12px" }} />
+                                        <Card.Img variant="top"  src={element.imgdata} style={{ height: '16rem', marginTop: "12px"  }} />
                                         <Card.Body>
                                             <Card.Title>{element.rname}</Card.Title>
                                             <Card.Text>
@@ -46,6 +47,7 @@ const Cards = () => {
                 </div>
             </div>
         </div>
+        </section>
     )
 }
 

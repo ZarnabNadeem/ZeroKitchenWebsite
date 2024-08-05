@@ -2,8 +2,8 @@ const Cardsdata = [
     {
         id: 1,
         rname: "Mix Desi Platter",
-        imgdata: "https://b.zmtcdn.com/data/pictures/9/18857339/8f53919f1175c08cf0f0371b73704f9b_o2_featured_v2.jpg?output-format=webp",
-        address: "North Indian, Biryani, Mughlai",
+        imgdata: "https://www.shutterstock.com/image-photo/indian-pakistani-food-collection-individually-600nw-2280212191.jpg",
+        address: "Tikka Kebabs, Chatniyan, Mughlai",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: " 1175 + order placed from here recently",
         price: 350,
@@ -26,7 +26,7 @@ const Cardsdata = [
     {
         id: 3,
         rname: "Pan Pizzeria",
-        imgdata: "https://b.zmtcdn.com/data/pictures/chains/1/19708611/10f90d4a69678d98662514d173b29665_o2_featured_v2.jpg",
+        imgdata: "https://www.seriouseats.com/thmb/tnFVsXReQHz9fK0XXWwMzaslavI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2019__04__20190319-cast-iron-pan-pizza-reshoot-vicky-wasik-29-333170d36c004f5bbfeed3ad97437078.jpg",
         address: "Pizza, Fast Food, Pasta",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: " 650 + order placed from here recently",
@@ -37,9 +37,9 @@ const Cardsdata = [
     },
     {
         id: 4,
-        rname: "Momo Chowmein",
-        imgdata: "https://b.zmtcdn.com/data/pictures/chains/1/113401/59f29399060caefcc575d59dc9402ce8_o2_featured_v2.jpg",
-        address: "Momos",
+        rname: "Chowmein",
+        imgdata: "https://www.chefkunalkapur.com/wp-content/uploads/2021/12/Veg-Chowmein-scaled.jpg?v=1638771610",
+        address: "Chowmein",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: " 300 + order placed from here recently",
         price: 70,
@@ -62,7 +62,7 @@ const Cardsdata = [
     {
         id: 6,
         rname: "Fulfilling Rolls",
-        imgdata: "https://b.zmtcdn.com/data/pictures/5/113895/3c06f6fbb8f667a2537dfdb6f060dc8b_o2_featured_v2.jpg",
+        imgdata: "https://www.foodfusion.com/wp-content/uploads/2019/05/Crispy-Chicken-roll-Recipe-by-Food-fusion-5.jpg",
         address: "Wraps FastFood, Chines",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: " 1100 + order placed from here recently",
@@ -74,7 +74,7 @@ const Cardsdata = [
     {
         id: 7,
         rname: "Pathore Chane",
-        imgdata: "https://b.zmtcdn.com/data/pictures/chains/5/110155/811c01a5430d50d3260f77917da99e12_o2_featured_v2.jpg",
+        imgdata: "https://static.toiimg.com/thumb/53314156.cms?imgsize=1762111&width=800&height=800",
         address: "North Indian, Fast Food",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: "500 + order placed from here recently",
@@ -86,7 +86,7 @@ const Cardsdata = [
     {
         id: 8,
         rname: "Adrak vali Chai",
-        imgdata: "https://b.zmtcdn.com/data/pictures/3/18514413/0a17b72e9fec52a3ca736f4c2ea3646f_o2_featured_v2.jpg",
+        imgdata: "https://kitchenofdebjani.com/wp-content/uploads/2021/03/Ginger-Tea-Recipe-Debjanir-Rannaghar.jpg",
         address: "Tea, Coffee, Shake, Beverages",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: "500 + order placed from here recently",
@@ -98,7 +98,7 @@ const Cardsdata = [
     {
         id: 9,
         rname: "Paratha Roll",
-        imgdata: "https://b.zmtcdn.com/data/pictures/7/19639627/94c0a4cf15c02d3982d154e2c5dd8cbb_o2_featured_v2.jpg",
+        imgdata: "https://sconceandscone.com/wp-content/uploads/2018/05/dsc_0282-e1617653675225.jpg",
         address: "Burger, Sandwich, Fast Food",
         delimg: "https://b.zmtcdn.com/data/o2_assets/0b07ef18234c6fdf9365ad1c274ae0631612687510.png?output-format=webp",
         somedata: "2525 + order placed from here recently",
